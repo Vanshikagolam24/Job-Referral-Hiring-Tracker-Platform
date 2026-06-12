@@ -1,9 +1,6 @@
 # Job-Referral-Hiring-Tracker-Platform
 Android application for tracking job applications, referrals, interviews, and hiring progress using Java and SQLite.
 
-
-An Android application built using Java and SQLite that helps users track:
-
 ## Features
 
 - Add/Edit/Delete Job Applications
