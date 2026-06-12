@@ -18,10 +18,6 @@ Android application for tracking job applications, referrals, interviews, and hi
 - RecyclerView
 - Material Design
 
-## Screenshots
-
-(Add screenshots here)
-
 ## Author
 
-Vanshu
+Vanshika Golam
