@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ============================================================
+    LAYOUT: item_job.xml
+    ============================================================
+    PURPOSE: Layout for ONE job application card in the RecyclerView list.
+    INFLATED BY: JobAdapter.onCreateViewHolder()
+
+    STRUCTURE:
+      CardView
+        └── LinearLayout (vertical)
+              ├── Row: Company Name + Status Badge
+              ├── Role text
+              ├── Date text
+              └── Recruiter text (optional, hidden if empty)
+
+    DESIGN:
+      - Rounded CardView with elevation shadow
+      - Color-coded status badge (set in Java, not XML)
+      - Subtle left border colored strip per company for visual interest
+    ============================================================
+-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── ROW 1: Company name + Status badge ─────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="6dp">
+
+            <!-- Company name (takes available space) -->
+            <TextView
+                android:id="@+id/tvCompany"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Company Name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#212121" />
+
+            <!-- Status badge (color set programmatically in JobAdapter) -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Applied"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:background="@drawable/status_badge_bg" />
+
+        </LinearLayout>
+
+        <!-- ── ROW 2: Job Role ────────────────────────────── -->
+        <TextView
+            android:id="@+id/tvRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Job Role"
+            android:textSize="15sp"
+            android:textColor="#424242"
+            android:layout_marginBottom="4dp" />
+
+        <!-- ── ROW 3: Application Date ────────────────────── -->
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Applied: 2024-06-01"
+            android:textSize="13sp"
+            android:textColor="#757575" />
+
+        <!-- ── ROW 4: Recruiter (hidden if empty) ─────────── -->
+        <TextView
+            android:id="@+id/tvRecruiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recruiter: Jane"
+            android:textSize="13sp"
+            android:textColor="#757575"
+            android:layout_marginTop="2dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
